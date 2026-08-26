@@ -1,5 +1,6 @@
 <p align="center">
   <img src="https://bunrec.com/assets/images/gallery03/dda26fb0_original.png" alt="Logo" width="200" height="260">
+
 >[!NOTE]
 >Built with ❤️ for the open source AI community
 ⋱𑣲BUꉆ☿ 
@@ -12,11 +13,12 @@
 </p>
 
     -✐꩙ Cost ꛌ Effort
-   ####*Total Cost: $0 
+    *✧Total Cost: $0 
     *✧Time to First Agent: ~30 minutes
     *✧Time to Production: ~1-2 weeks
         
- <summary><b>all components are open source. so yes, you *can* achieve this without spending any money but it's true what they say- ~~ya get what ya paid for~~ Naturally, you might want to spend money on API calls, Better models, Cloud Hosting, VPS `(Virtual Private Server)`, and a TLD `(Top Level Domain)` even though those things aren't strictly necessary. Just like boots aren't strictly necessary when you're working for yourself… but you're gonna want a pair when the work gets hard. 
+ <summary><b>all components are open source.
+ so yes, you *can* achieve this without spending any money but it's true what they say- ~~ya get what ya paid for~~ Naturally, you might want to spend money on API calls, Better models, Cloud Hosting, VPS `(Virtual Private Server)`, and a TLD `(Top Level Domain)` even though those things aren't strictly necessary. Just like boots aren't strictly necessary when you're working for yourself… but you're gonna want a pair when the work gets hard. 
 It really depends on how far you wanna go.
 ask yourself
 Do you want to be the next MANUS, get a good grade on assignment, or is this a Hobby Project for you?
