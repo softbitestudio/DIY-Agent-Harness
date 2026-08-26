@@ -18,18 +18,20 @@
     *✧Time to Production: ~1-2 weeks
         
  <details><b>all components are open source.
- so yes, you *can* achieve this without spending any money but it's true what they say- ~~ya get what ya paid for~~ Naturally, you might want to spend money on API calls, Better models, Cloud Hosting, VPS `(Virtual Private Server)`, and a TLD `(Top Level Domain)` even though those things aren't strictly necessary. Just like boots aren't strictly necessary when you're working for yourself… but you're gonna want a pair when the work gets hard. 
+ so yes, you can achieve this without spending any money
+ but it's true what they say 
+~ya get what ya paid for!
+ Naturally, you might want to spend money on API calls, Better models, Cloud Hosting, VPS (Virtual Private Server), and a TLD (Top Level Domain) even though those things aren't strictly necessary. 
+
 It really depends on how far you wanna go.
 ask yourself
 Do you want to be the next MANUS, get a good grade on assignment, or is this a Hobby Project for you?
 𐃇 Plan Accordingly𐃘 </b></details>
 
-### THIS WILL GUIDE YOU TOWARD BUILDING
-## Your Own AGENT HARNESS :godmode:
+### SOON YOU'LL BE BUILDING
+## Your Own AGENTIC HARNESS :godmode:
 
-Open Source AI Agent Platform Guide
-Step-by-step guide to creating an autonomous multi-agent system with interactive dashboard and API gateway.
-:clipboard: Overview
+# Overview
 
 >[!IMPORTANT]
 >AGENT AI is an autonomous agent platform that orchestrates multiple specialized agents to complete complex tasks end-to-end. This guide shows you how to build a similar system using 100% open source components.
