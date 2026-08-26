@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="path/to/logo.png" alt="Logo" width="200" height="200">
+  <img src="https://bunrec.com/assets/images/gallery03/dda26fb0_original.png" alt="Logo" width="200" height="400">
 </p>[![Shields.io Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -10,15 +10,17 @@
 *Time to First Agent: ~30 minutes
 *Time to Production: ~1-2 weeks (depending on complexity)
 
->[!TIP]
+>[!FIRE]
 >Built with ❤️ for the open source AI community
 ~♪BUꉆ 
 [:rabbit2: BUNREC.com](https://BunRec.com/)
+
 *Last updated: August 26 2026*
 
-how to build your own AI harness to Host Your Own Agent! :godmode:
+:godmode:
+This will guide you on the path toward Building
+# :fireworks: Your Own AGENT HARNESS~♪
 
-# :fireworks: Build Your Own AGENT HARNESS: 
 Open Source AI Agent Platform Guide
 Step-by-step guide to creating an autonomous multi-agent system with interactive dashboard and API gateway.
 :clipboard: Overview
@@ -40,32 +42,35 @@ What You'll Build :octocat:
 # :gear: Step 1: Set Up the Agent Orchestration Layer
 Option A: Async LangChain + LangGraph (Recommended for Production)
 LangGraph provides precise control over stateful, cyclic multi-agent systems with native checkpointing, branching, and async execution support.
-1.1 Install Dependencies
 
-'''
-# Create a new project directory
-'''
+## 1.1 Install Dependencies
+
+
+#### Create a new project directory
+
+```
 mkdir agent-oss && cd agent-oss
-'''
-
+```
+^replace `agent-oss` with w/e you're calling your agent^
+^*i.e. Hermes, Odysseus, Bunnyclaw, etc.*^
 # Create virtual environment
-'''
+```bash
 python -m venv venv 
 source venv/bin/activate # On Windows: venv\Scripts\activate
-''''
+```
 
 # Install core packages and async drivers
-'''
+```bash
 pip install langchain langgraph langchain-community langgraph-checkpoint-sqlite
 pip install sqlite-vec langchain-openai
 pip install playwright beautifulsoup4 requests fastapi uvicorn
 playwright install
-'''
+```
 
 1.2 Create Your Asynchronous Multi-Agent System
-Create ==agents.py==:
+Create `agents.py`:
 
-'''python
+```python
 import asyncio
 from typing import TypedDict, Annotated
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
@@ -136,12 +141,12 @@ workflow.add_node("researcher", researcher_node)
 workflow.add_node("executor", executor_node)
 
 workflow.set_entry_point("planner")
-'''
+```
 
 ##1.3 Add Micro-Model Task Delegation Routing
 Route conditional edges using fast micro-models instead of wasting high-parameter frontier models on conditional structural checks.
 
-'''python
+```python
 from pydantic import BaseModel, Field
 
 class RouteDecision(BaseModel):
@@ -176,15 +181,19 @@ workflow.add_conditional_edges(
     route_task, 
     {"executor": "executor", END: END}
 )
-''' 
+```
 
 ## Step 2: Set Up the Hardened Sandbox Environment
 
-Avoid using unconfined Docker containers. Harden the container runtime using gVisor (runsc) or Firecracker microVMs alongside read-only root filesystems and strict CPU/memory quotas.
+|| ⚠️ **Warning** |
+|----------------|
+| This is a warning in a box. |
+
+==Avoid using unconfined Docker containers. Harden the container runtime using gVisor (runsc) or Firecracker microVMs alongside read-only root filesystems and strict CPU/memory quotas.==
 
 2.1 Run Hardened Sandbox with gVisor
 
-'''bash
+```bash
 # Pull and execute the sandbox with gVisor runtime and strict resource constraints
 docker run -d \
   --runtime=runsc \
@@ -197,15 +206,12 @@ docker run -d \
   -p 127.0.0.1:8080:8080 \
   --name agent-sandbox \
   ghcr.io/agent-infra/sandbox:latest
-'''
+```
 
-|| ⚠️ **Warning** |
-|----------------|
-| This is a warning in a box. |
 
 ### 2.2 Integrate Sandbox Client in Async Pipelines
 
-'''python
+```python
 import aiohttp
 
 class HardenedSandbox:
@@ -228,13 +234,13 @@ async def execute_code_node(state: AgentState):
     code = state["messages"][-1].content
     output = await sandbox.execute_command(f"python3 -c '{code}'")
     return {"messages": [AIMessage(content=output)], "current_agent": "executor"}
-'''
+```
 
 ##Step 3: Deploy API Gateway with Prompt Caching
 3.1 LiteLLM Proxy Configuration with Caching enabled
-Create ==config.yaml== to enable prompt caching headers for long context windows and agent system prompts:
+Create `config.yaml` to enable prompt caching headers for long context windows and agent system prompts:
 
-'''yaml
+```yaml
 model_list:
   - model_name: gpt-4o
     litellm_params:
@@ -262,24 +268,25 @@ litellm_settings:
     supported_call_types: ["acontext_embedding", "acompletion"]
     host: "localhost"
     port: 6379
-'''
+```
 
 ## 3.2 Run LiteLLM Proxy
 
-'''bashdocker run -d \
+```bashdocker run -d \
   -p 4000:4000 \
   -v $(pwd)/config.yaml:/app/config.yaml \
   -e OPENAI_API_KEY=your-key \
   -e ANTHROPIC_API_KEY=your-key \
   ghcr.io/berriai/litellm:main --config /app/config.yaml
-'''
+```
 
 ## Step 4: Server-Sent Events (SSE) Real-Time UI
 Eliminate input lag and re-render loops by serving a lightweight Server-Sent Events (SSE) stream via FastAPI.
-4.1 FastAPI Real-Time Streaming Server
-Create ==server.py==:
 
-'''python
+***4.1 FastAPI Real-Time Streaming Server***
+Create `server.py`:
+
+```python
 import asyncio
 import json
 from fastapi import FastAPI
@@ -315,12 +322,16 @@ async def stream_agent_execution(task: str):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
-'''
+```
 
 ## 4.2 Lightweight HTML SSE Client
-Create 'index.html':
+Create `index.html`:
 
-'''html
+>[!IMPORTANT]
+> OBVI THIS IS A PLACEHOLDER
+> SPICE IT UP WITH YOUR OWN STYLE :fishcake:
+
+```html
 <!DOCTYPE html>
 <html>
 <head><title>AGENT Dashboard</title></head>
@@ -350,7 +361,7 @@ Create 'index.html':
 </body>
 </html>
 
-'''
+```
 
 >[!TIP]
 >  :fishsticks:
@@ -360,7 +371,7 @@ Replace manual file serialization (JSON dumps) and flat SKILL.md structures with
 
 5.1 ACID State Persistence with LangGraph Checkpointer
 
-'''python
+```python
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
 import aiofiles
 
@@ -380,12 +391,12 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-'''
+```
 
 ## 5.2 Hybrid Memory Indexing with Vector RAG
 Embed skill definitions and historical output tasks into a lightweight vector database (==sqlite-vec== or Supabase ==pgvector==) to inject relevant skills into the context window only when needed.
 
-'''python
+```python
 from langchain_community.vectorstores import SQLiteVec
 from langchain_openai import OpenAIEmbeddings
 
@@ -411,7 +422,7 @@ async def retrieve_relevant_skills(query: str) -> str:
 
 >[!NOTE]
 >Project structure
-''' text
+``` text
 agent-oss/
 ├── agents/
 │   ├── __init__.py
@@ -433,12 +444,12 @@ agent-oss/
 ├── requirements.txt
 ├── docker-compose.yml
 └── README.md
-'''
+```
 
 ## Step 6: :shipit: Deployment Options
 Docker Compose Stack with Hardened Runtime
 
-'''yaml
+```yaml
 version: '3.8'
 
 services:
@@ -481,7 +492,7 @@ services:
       - gateway
       - sandbox
     restart: unless-stopped
-'''
+```
 
 # :feelsgood: Comparison: AGENT vs. This Open Source Stack
 | Feature | AGENT | Open Source Alternative | Technical Advantage |
