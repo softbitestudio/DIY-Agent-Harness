@@ -1,24 +1,29 @@
 <p align="center">
   <img src="https://bunrec.com/assets/images/gallery03/dda26fb0_original.png" alt="Logo" width="200" height="260">
-
 >[!NOTE]
 >Built with ❤️ for the open source AI community
-~♪BUꉆ 
-[:rabbit2: BUNREC.com](https://BunRec.com/)
+⋱𑣲BUꉆ☿ 
+[𓃹BUNREC.com](https://BunRec.com/)
 
 [![Shields.io Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 </p>
--Cost&Effort
-*Total Cost: $0 (all components are open source)
-*Time to First Agent: ~30 minutes
-*Time to Production: ~1-2 weeks (depending on complexity)
 
-:godmode:
-This will guide you on the path toward Building
-# :fireworks: Your Own AGENT HARNESS~♪
+    -✐꩙ Cost ꛌ Effort
+   ####*Total Cost: $0 
+    *✧Time to First Agent: ~30 minutes
+    *✧Time to Production: ~1-2 weeks
+        
+ <summary><b>all components are open source. so yes, you *can* achieve this without spending any money but it's true what they say- ~~ya get what ya paid for~~ Naturally, you might want to spend money on API calls, Better models, Cloud Hosting, VPS `(Virtual Private Server)`, and a TLD `(Top Level Domain)` even though those things aren't strictly necessary. Just like boots aren't strictly necessary when you're working for yourself… but you're gonna want a pair when the work gets hard. 
+It really depends on how far you wanna go.
+ask yourself
+Do you want to be the next MANUS, get a good grade on assignment, or is this a Hobby Project for you?
+𐃇 Plan Accordingly𐃘 </b></summary>
+
+###THIS WILL GUIDE YOU TOWARD BUILDING
+## Your Own AGENT HARNESS :godmode:
 
 Open Source AI Agent Platform Guide
 Step-by-step guide to creating an autonomous multi-agent system with interactive dashboard and API gateway.
