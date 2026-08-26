@@ -17,14 +17,14 @@
     *✧Time to First Agent: ~30 minutes
     *✧Time to Production: ~1-2 weeks
         
- <summary><b>all components are open source.
+ <details><b>all components are open source.
  so yes, you *can* achieve this without spending any money but it's true what they say- ~~ya get what ya paid for~~ Naturally, you might want to spend money on API calls, Better models, Cloud Hosting, VPS `(Virtual Private Server)`, and a TLD `(Top Level Domain)` even though those things aren't strictly necessary. Just like boots aren't strictly necessary when you're working for yourself… but you're gonna want a pair when the work gets hard. 
 It really depends on how far you wanna go.
 ask yourself
 Do you want to be the next MANUS, get a good grade on assignment, or is this a Hobby Project for you?
-𐃇 Plan Accordingly𐃘 </b></summary>
+𐃇 Plan Accordingly𐃘 </b></details>
 
-###THIS WILL GUIDE YOU TOWARD BUILDING
+### THIS WILL GUIDE YOU TOWARD BUILDING
 ## Your Own AGENT HARNESS :godmode:
 
 Open Source AI Agent Platform Guide
