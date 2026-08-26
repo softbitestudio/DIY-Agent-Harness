@@ -151,7 +151,7 @@ workflow.add_node("executor", executor_node)
 workflow.set_entry_point("planner")
 ```
 
-##1.3 Add Micro-Model Task Delegation Routing
+## 1.3 Add Micro-Model Task Delegation Routing
 Route conditional edges using fast micro-models instead of wasting high-parameter frontier models on conditional structural checks.
 
 ```python
@@ -193,16 +193,15 @@ workflow.add_conditional_edges(
 
 ## Step 2: Set Up the Hardened Sandbox Environment
 
-|| ⚠️ **Warning** |
-|----------------|
-| This is a warning in a box. |
+>[!WARNING]
+>This is a warning in a box.
 
-==Avoid using unconfined Docker containers. Harden the container runtime using gVisor (runsc) or Firecracker microVMs alongside read-only root filesystems and strict CPU/memory quotas.==
+***Avoid using unconfined Docker containers. Harden the container runtime using gVisor (runsc) or Firecracker microVMs alongside read-only root filesystems and strict CPU/memory quotas.***
 
-2.1 Run Hardened Sandbox with gVisor
-
+## 2.1 Run Hardened Sandbox with gVisor
+ Pull and execute the sandbox with gVisor
 ```bash
-# Pull and execute the sandbox with gVisor runtime and strict resource constraints
+ runtime and strict resource constraints
 docker run -d \
   --runtime=runsc \
   --read-only \
@@ -217,7 +216,7 @@ docker run -d \
 ```
 
 
-### 2.2 Integrate Sandbox Client in Async Pipelines
+## 2.2 Integrate Sandbox Client in Async Pipelines
 
 ```python
 import aiohttp
@@ -244,8 +243,9 @@ async def execute_code_node(state: AgentState):
     return {"messages": [AIMessage(content=output)], "current_agent": "executor"}
 ```
 
-##Step 3: Deploy API Gateway with Prompt Caching
-3.1 LiteLLM Proxy Configuration with Caching enabled
+## Step 3: Deploy API Gateway with Prompt Caching
+
+## 3.1 LiteLLM Proxy Configuration with Caching enabled
 Create `config.yaml` to enable prompt caching headers for long context windows and agent system prompts:
 
 ```yaml
