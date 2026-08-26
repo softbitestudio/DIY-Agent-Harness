@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://bunrec.com/assets/images/gallery03/dda26fb0_original.png" alt="Logo" width="200" height="250">
+  <img src="https://bunrec.com/assets/images/gallery03/dda26fb0_original.png" alt="Logo" width="150" height="250">
 
 >[!NOTE]
 >Built with ❤️ for the open source AI community
