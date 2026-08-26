@@ -6,12 +6,11 @@
 ~♪BUꉆ 
 [:rabbit2: BUNREC.com](https://BunRec.com/)
 
-
-</p>[!Shields.io Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Shields.io Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
+</p>
 -Cost&Effort
 *Total Cost: $0 (all components are open source)
 *Time to First Agent: ~30 minutes
