@@ -1,18 +1,30 @@
+<p align="center">
+  <img src="path/to/logo.png" alt="Logo" width="200" height="200">
+</p>[![Shields.io Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-Total Cost: $0 (all components are open source)
-Time to First Agent: ~30 minutes
-Time to Production: ~1-2 weeks (depending on complexity)
+-Cost&Effort
+*Total Cost: $0 (all components are open source)
+*Time to First Agent: ~30 minutes
+*Time to Production: ~1-2 weeks (depending on complexity)
 
-Built with ❤️ for the open source AI community
-~♪BUꉆ https://BunRec.com/
-Last updated: August 26 2026
+>[!TIP]
+>Built with ❤️ for the open source AI community
+~♪BUꉆ 
+[:rabbit2: BUNREC.com](https://BunRec.com/)
+*Last updated: August 26 2026*
 
-how to build your own AI harness like AGENT
-:fireworks: Build Your Own AGENT: Open Source AI Agent Platform Guide
+how to build your own AI harness to Host Your Own Agent! :godmode:
+
+# :fireworks: Build Your Own AGENT HARNESS: 
+Open Source AI Agent Platform Guide
 Step-by-step guide to creating an autonomous multi-agent system with interactive dashboard and API gateway.
 :clipboard: Overview
 
-AGENT AI is an autonomous agent platform that orchestrates multiple specialized agents to complete complex tasks end-to-end. This guide shows you how to build a similar system using 100% open source components.
+>[!IMPORTANT]
+>AGENT AI is an autonomous agent platform that orchestrates multiple specialized agents to complete complex tasks end-to-end. This guide shows you how to build a similar system using 100% open source components.
 
 What You'll Build :octocat:
 | Component | AGENT Feature | Open Source Alternative |
