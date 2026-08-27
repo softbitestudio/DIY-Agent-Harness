@@ -369,10 +369,7 @@ Create `index.html`:
 </body>
 </html>
 
-```
-
->[!TIP]
->  :fishsticks:
+``` 
 
 ## Step 5: State Persistence & Hybrid Memory Indexing
 Replace manual file serialization (JSON dumps) and flat SKILL.md structures with ACID-compliant LangGraph state checkpointers and Vector RAG retrieval.
@@ -510,4 +507,117 @@ services:
 | Gateway & Cost | Direct API | LiteLLM + Prompt Caching | Up to 80% latency/cost reduction on heavy system prompts |
 | Persistence & Memory | File system dumps | LangGraph `SqliteSaver` + `sqlite-vec` RAG | ACID compliance, context pruning, and full time-travel |
 | Client Streaming | Proprietary UI | FastAPI SSE / WebSockets | Low-latency real-time token and state emission |
+
+>[!TIP]
+>  :fishsticks: Fishsticks make a quick and healthy snack rich in Omega-3
+plus, you can use the grease to to frustratingly masturbate when you get lost and feel like there's no hope of finishing the project. well, worry not, fren!
+>Here are the file implementations so your codebase actually matches that modular structure.
+
+**`requirements.txt`**
+
+```text
+langchain>=0.2.0
+langgraph>=0.1.0
+langchain-community
+langchain-openai
+langgraph-checkpoint-sqlite
+sqlite-vec
+fastapi
+uvicorn
+aiohttp
+playwright
+pydantic
+```
+
+**`sandbox/Dockerfile`**
+
+```dockerfile
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl git bash build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+CMD ["tail", "-f", "/dev/null"]
+```
+
+**`sandbox/config.yaml`**
+
+```yaml
+sandbox:
+  workdir: "/workspace"
+  timeout_seconds: 300
+  limits:
+    cpus: "2.0"
+    memory: "2048M"
+  security:
+    read_only_root: true
+    tmpfs_size: "512m"
+```
+
+**`agents/planner.py`**
+
+```python
+from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate
+
+PLANNER_PROMPT = ChatPromptTemplate.from_messages([
+    SystemMessage(content="""You are a task planner. Break down complex tasks into executable subtasks. 
+Return a JSON object with: { "subtasks": [ {"agent": "researcher|executor", "task": "description"} ] }"""),
+    HumanMessage(content="{task}"),
+])
+
+async def planner_node(state: dict, model):
+    chain = PLANNER_PROMPT | model
+    response = await chain.ainvoke({"task": state["messages"][-1].content})
+    return {"messages": [AIMessage(content=response.content)], "current_agent": "planner"}
+```
+
+**`agents/researcher.py`**
+
+```python
+from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate
+
+RESEARCHER_PROMPT = ChatPromptTemplate.from_messages([
+    SystemMessage(content="You are a researcher agent. Gather information using async search and browsing capabilities."),
+    HumanMessage(content="{task}"),
+])
+
+async def researcher_node(state: dict, model):
+    chain = RESEARCHER_PROMPT | model
+    response = await chain.ainvoke({"task": state["messages"][-1].content})
+    return {"messages": [AIMessage(content=response.content)], "current_agent": "researcher"}
+```
+
+**`agents/executor.py`**
+
+```python
+from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate
+
+EXECUTOR_PROMPT = ChatPromptTemplate.from_messages([
+    SystemMessage(content="You are an executor agent. Write and execute code inside the sandboxed environment."),
+    HumanMessage(content="{task}"),
+])
+
+async def executor_node(state: dict, model):
+    chain = EXECUTOR_PROMPT | model
+    response = await chain.ainvoke({"task": state["messages"][-1].content})
+    return {"messages": [AIMessage(content=response.content)], "current_agent": "executor"}
+```
+
+**`agents/__init__.py`**
+
+```python
+from .planner import planner_node
+from .researcher import researcher_node
+from .executor import executor_node
+
+__all__ = ["planner_node", "researcher_node", "executor_node"]
+```
+
+
+
 
