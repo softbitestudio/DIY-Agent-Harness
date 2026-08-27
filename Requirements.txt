@@ -1,0 +1,11 @@
+langchain>=0.2.0
+langgraph>=0.1.0
+langchain-community
+langchain-openai
+langgraph-checkpoint-sqlite
+sqlite-vec
+fastapi
+uvicorn
+aiohttp
+playwright
+pydantic
