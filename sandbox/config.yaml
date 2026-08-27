@@ -1,0 +1,9 @@
+sandbox:
+  workdir: "/workspace"
+  timeout_seconds: 300
+  limits:
+    cpus: "2.0"
+    memory: "2048M"
+  security:
+    read_only_root: true
+    tmpfs_size: "512m"
