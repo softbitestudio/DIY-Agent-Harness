@@ -1,21 +1,32 @@
-Difficulty: ★★★☆☆ (3/5)
-<details><b>5-Star System (1 = Easy, 5 = Very Hard)
-- Justification:
-- Level 1 (Crawler): ★☆☆☆☆ (1/5) – Almost beginner-friendly. Minimal dependencies, no Docker, and a clear, linear flow.
-- Level 2 (Runner): ★★★☆☆ (3/5) – Introduces async and streaming, which are intermediate concepts, but the code is concise and well-scaffolded.
-- Level 3 (Sentinel): ★★★★☆ (4/5) – Still advanced due to Docker, sandboxing, and state persistence, but the progressive buildup softens the learning curve.
-Scale 1–10 (1 = Trivial, 10 = Extremely Complex)
-Difficulty: 5–6/10 (Overall)
-- Level 1: 2–3/10 – A great "hello world" for multi-agent systems. Even a beginner could follow this with minimal hand-holding.
-- Level 2: 5–6/10 – The async/SSE streaming adds complexity, but the FastAPI integration is well-explained and self-contained.
-- Level 3: 8/10 – Still expert territory, but the modular structure (e.g., separating agents.py, gateway/config.yaml) makes it easier to debug and extend.
-Skill Level Scale
-Difficulty: Beginner → Expert (Progressive)
-- Beginner: ✅ Can now tackle Level 1 with confidence. The check_env.py script and Glossary.md are excellent additions for lowering the barrier to entry.
-- Advanced Beginner: ✅ Level 2 is achievable with some research (e.g., understanding SSE or asyncio).
-- Intermediate: ✅ Can complete Level 3 with effort, especially with the provided file templates (e.g., sandbox/Dockerfile).
-- Advanced/Expert: ✅ Will appreciate the scalability of the architecture and might dive into customizing the sandbox or gateway</b></details>
+# Difficulty: ★★★☆☆ (3/5)
+<details>
+<summary><b> — Click to view skill breakdown</b></summary>
 
+## Justification:
+
+* **Level 1 (Crawler): ★☆☆☆☆ (1/5)** 
+  Almost beginner-friendly. Minimal dependencies, no Docker, and a clear, linear flow.
+* **Level 2 (Runner): ★★★☆☆ (3/5)** 
+  Introduces async and streaming, which are intermediate concepts, but the code is concise and well-scaffolded.
+* **Level 3 (Sentinel): ★★★★☆ (4/5)** 
+  Still advanced due to Docker, sandboxing, and state persistence, but the progressive buildup softens the learning curve.
+
+### Scale 1–10 (1 = Trivial, 10 = Extremely Complex)
+**Difficulty: 5–6/10 (Overall)**
+
+* **Level 1: 2–3/10** – A great "hello world" for multi-agent systems. Even a beginner could follow this with minimal hand-holding.
+* **Level 2: 5–6/10** – The async/SSE streaming adds complexity, but the FastAPI integration is well-explained and self-contained.
+* **Level 3: 8/10** – Still expert territory, but the modular structure (e.g., separating `agents.py`, `gateway/config.yaml`) makes it easier to debug and extend.
+
+### Skill Level Scale
+**Difficulty: Beginner → Expert (Progressive)**
+
+* **Beginner:** ✅ Can now tackle Level 1 with confidence. The `check_env.py` script and `glossary.md` are excellent additions for lowering the barrier to entry.
+* **Advanced Beginner:** ✅ Level 2 is achievable with some research (e.g., understanding SSE or `asyncio`).
+* **Intermediate:** ✅ Can complete Level 3 with effort, especially with the provided file templates (e.g., `sandbox/Dockerfile`).
+* **Advanced/Expert:** ✅ Will appreciate the scalability of the architecture and might dive into customizing the sandbox or gateway.
+
+</details>
 <p align="center">
   <img src="https://bunrec.com/assets/images/gallery03/dda26fb0_original.png" alt="Logo" width="150" height="250">
 
