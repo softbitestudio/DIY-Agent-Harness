@@ -79,7 +79,7 @@ Do you want to be the next MANUS, get a good grade on assignment, or is this a H
 
 # 🛑 Before You Start
 
-If concepts like "microVMs," "SSE streams," and "ACID checkpointers" sound like alien technology, don't panic. Check out our **[Glossary (The Jargon Decoupler)](glossary.md)** before writing a single line of code.
+If concepts like "microVMs," "SSE streams," and "ACID checkpointers" sound like alien technology, don't panic. Check out our **[Glossary.md](Glossary.md)** before writing a single line of code.
 
 ### 🔍 Check Your Environment
 Run this zero-dependency bootstrap script (`check_env.py`) at the root of your project to ensure you're ready to build:
